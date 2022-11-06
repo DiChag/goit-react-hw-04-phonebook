@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid';
 import { ContactForm } from './ContactForm/ContactForm';
 import { Filter } from './Filter/Filter';
 import { ContactList } from './ContactList/ContactList';
+// import { Modal } from './Modal/Modal';
 
 export class App extends Component {
   state = {
@@ -15,6 +16,8 @@ export class App extends Component {
     filter: '',
     name: '',
     number: '',
+
+    // showModal: false,
   };
 
   componentDidMount() {
@@ -71,6 +74,14 @@ export class App extends Component {
     return filterContactsList;
   };
 
+  //  MODAL
+
+  // toggleModal = () => {
+  //   this.setState(({ showModal }) => ({
+  //     showModal: !showModal,
+  //   }));
+  // };
+
   render() {
     const { filter } = this.state;
 
@@ -85,6 +96,23 @@ export class App extends Component {
           color: '#010101',
         }}
       >
+        {/* <button type="button" onClick={this.toggleModal}>
+          Add contact
+        </button>
+        {showModal && (
+          <Modal>
+            <h1>Hello world</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+              provident molestias facilis dolore culpa tenetur aperiam eum,
+              accusantium voluptatibus expedita, nobis praesentium animi,
+              voluptates pariatur repellat odio. Error, facere ipsum?
+            </p>
+            <button type="button" onClick={this.toggleModal}>
+              X
+            </button>
+          </Modal>
+        )} */}
         <h1>Phonebook</h1>
         <ContactForm handleSubmit={this.handleSubmit} />
         <h2> Contacts</h2>
